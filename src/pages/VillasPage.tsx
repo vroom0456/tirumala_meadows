@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import Villa3DViewer from '../components/Villa3DViewer'
 import {
   Check,
   Calendar,
@@ -348,6 +349,11 @@ export default function VillasPage() {
           </div>
         </div>
       </section>
+
+      {/* ═════════════════════════════════════════════════════════════════ */}
+      {/* 3D ARCHITECTURAL STUDIO: 3D View, CAD Blueprint & Walkthrough     */}
+      {/* ═════════════════════════════════════════════════════════════════ */}
+      <Villa3DViewer />
 
       {/* ═════════════════════════════════════════════════════════════════ */}
       {/* UNIQUE FEATURE FOR PRESENTATION: Interactive Daylight Simulator   */}

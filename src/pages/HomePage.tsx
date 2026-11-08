@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import BrochureModal from '../components/BrochureModal'
+import Villa3DViewer from '../components/Villa3DViewer'
 import {
   ArrowRight, Check, MapPin, Calendar, ChevronDown,
   Dumbbell, Film, Trees, ShieldCheck, Users, Droplets,
@@ -635,86 +636,24 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════ */}
-      {/* 5. VIRTUAL INTERIOR PREVIEW (Experiential UX)       */}
+      {/* 5. 3D ARCHITECTURAL STUDIO & VIRTUAL WALKTHROUGH    */}
       {/* ═══════════════════════════════════════════════════ */}
       <section className="py-20 bg-white border-b border-border">
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <span className="text-xs font-bold text-hotpink uppercase tracking-wider">Spatial Walkthrough</span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-navy font-display tracking-tight mt-1">
-              Virtual Room Explorer
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-navy/5 px-3.5 py-1 text-xs font-bold text-navy">
+              <Sparkles className="h-3 w-3 text-hotpink" />
+              <span>Multi-Mode Architectural Studio</span>
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-navy font-display tracking-tight mt-2">
+              Interactive 3D Cutaway, CAD & Walkthrough
             </h2>
             <p className="text-xs sm:text-sm text-slate-grey mt-2">
-              Preview the actual spatial dimensions and premium interior finishes of a completed Tirumala Meadows villa.
+              Switch between <strong>3D Isometric Models</strong>, <strong>2D Engineering CAD Blueprints</strong> with dimensional calipers, and <strong>First-Person Virtual Walkthroughs</strong>.
             </p>
-
-            {/* Room Tabs */}
-            <div className="flex flex-wrap items-center justify-center gap-2 mt-6">
-              {virtualRooms.map((r) => (
-                <button
-                  key={r.id}
-                  onClick={() => setActiveRoom(r.id)}
-                  className={`rounded-full px-4 sm:px-5 py-2 text-xs font-semibold transition ${
-                    activeRoom === r.id
-                      ? 'bg-navy text-white shadow-xs'
-                      : 'bg-soft border border-border text-slate-grey hover:text-navy hover:bg-white'
-                  }`}
-                >
-                  {r.name}
-                </button>
-              ))}
-            </div>
           </div>
 
-          {/* Room Display Card */}
-          <div className="rounded-3xl border border-border bg-soft p-6 sm:p-8 shadow-corporate">
-            <div className="grid gap-8 lg:grid-cols-12 items-center">
-              
-              <div className="lg:col-span-7">
-                <div className="relative h-72 sm:h-96 rounded-2xl overflow-hidden bg-white border border-border">
-                  <img
-                    src={currentRoom.image}
-                    alt={currentRoom.name}
-                    className="h-full w-full object-cover transition-transform duration-700 hover:scale-103"
-                  />
-                  <div className="absolute top-3 left-3 rounded-full bg-white/95 px-3 py-1 text-xs font-bold text-navy shadow-xs border border-border">
-                    Dimension: {currentRoom.dimension}
-                  </div>
-                </div>
-              </div>
-
-              <div className="lg:col-span-5 space-y-4">
-                <span className="text-xs font-bold uppercase tracking-wider text-hotpink">Room Specification</span>
-                <h3 className="text-2xl font-bold text-navy font-display">{currentRoom.name}</h3>
-                <p className="text-sm text-slate-grey leading-relaxed">{currentRoom.desc}</p>
-                <div className="rounded-2xl bg-white border border-border p-4 text-xs text-slate-grey space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="font-semibold text-navy">Flooring:</span>
-                    <span>High-Gloss Marble & Granite</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="font-semibold text-navy">Joinery:</span>
-                    <span>Polished Indian Teak Wood</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="font-semibold text-navy">Ventilation:</span>
-                    <span>Natural Cross-Breeze Windows</span>
-                  </div>
-                </div>
-
-                <div className="pt-2">
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center gap-2 rounded-full bg-navy px-6 py-3 text-xs font-bold text-white hover:bg-navy-surface transition shadow-xs"
-                  >
-                    <Calendar className="h-3.5 w-3.5 text-hotpink" />
-                    <span>Schedule In-Person Walkthrough</span>
-                  </Link>
-                </div>
-              </div>
-
-            </div>
-          </div>
+          <Villa3DViewer />
         </div>
       </section>
 
