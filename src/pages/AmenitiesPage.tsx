@@ -14,7 +14,8 @@ import {
   Check,
   Droplets,
   Zap,
-  Building2
+  Building2,
+  CheckCircle2
 } from 'lucide-react'
 
 const amenityCategories = [
@@ -85,19 +86,24 @@ export default function AmenitiesPage() {
       : amenityCategories.filter((a) => a.category === activeTab)
 
   return (
-    <div className="min-h-screen bg-white text-navy font-sans selection:bg-hotpink selection:text-white">
+    <div className="min-h-screen bg-soft text-navy font-sans selection:bg-brandLogo-blue selection:text-white">
       <Navbar />
 
       {/* Header */}
-      <section className="pt-32 pb-14 bg-soft border-b border-border text-center">
+      <section className="pt-32 pb-14 bg-soft border-b border-slate-200 text-center">
         <div className="mx-auto max-w-4xl px-6 space-y-3">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-hotpink/10 px-3.5 py-1 text-xs font-bold text-hotpink">
-            14-Acre Community Living
-          </span>
-          <h1 className="text-4xl sm:text-5xl font-bold text-navy font-display tracking-tight">
+          <div className="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-3.5 py-1 text-xs font-bold text-navy uppercase tracking-wider shadow-2xs">
+            <span className="flex items-center gap-1">
+              <span className="h-1.5 w-1.5 rounded-full bg-brandLogo-red" />
+              <span className="h-1.5 w-1.5 rounded-full bg-brandLogo-blue" />
+              <span className="h-1.5 w-1.5 rounded-full bg-brandLogo-green" />
+            </span>
+            <span>Curated Community Living</span>
+          </div>
+          <h1 className="text-3xl sm:text-5xl font-display font-extrabold text-navy tracking-tight">
             Clubhouse & Lifestyle Amenities
           </h1>
-          <p className="text-sm sm:text-base text-slate-grey max-w-xl mx-auto leading-relaxed">
+          <p className="text-xs sm:text-sm text-slate-600 font-medium max-w-xl mx-auto leading-relaxed">
             From the resort swimming pool to the private mini cinema, explore the recreational infrastructure at Tirumala Meadows.
           </p>
 
@@ -107,10 +113,10 @@ export default function AmenitiesPage() {
               <button
                 key={c}
                 onClick={() => setActiveTab(c)}
-                className={`rounded-full px-4 sm:px-5 py-1.5 text-xs font-semibold transition ${
+                className={`rounded-full px-4 sm:px-5 py-1.5 text-xs font-bold tracking-wider transition ${
                   activeTab === c
                     ? 'bg-navy text-white shadow-xs'
-                    : 'bg-white border border-border text-slate-grey hover:text-navy hover:bg-soft'
+                    : 'bg-white border border-slate-200 text-slate-600 hover:text-navy hover:bg-slate-50'
                 }`}
               >
                 {c}
@@ -126,26 +132,26 @@ export default function AmenitiesPage() {
           {filtered.map((cat, idx) => {
             const Icon = cat.icon
             return (
-              <div key={idx} className="rounded-3xl border border-border bg-soft p-6 sm:p-10 shadow-xs">
+              <div key={idx} className="rounded-3xl border border-slate-200 bg-soft p-6 sm:p-10 shadow-sm">
                 <div className="grid gap-8 lg:grid-cols-12 items-center">
                   
                   <div className={`space-y-4 ${idx % 2 === 1 ? 'lg:col-span-7 lg:order-2' : 'lg:col-span-7'}`}>
                     <div className="flex items-center gap-3">
-                      <div className="h-11 w-11 rounded-2xl bg-white border border-border flex items-center justify-center text-hotpink">
-                        <Icon className="h-5 w-5" />
+                      <div className="h-11 w-11 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-navy shadow-2xs">
+                        <Icon className="h-5 w-5 text-brandLogo-red" />
                       </div>
                       <div>
-                        <span className="text-xs font-bold uppercase tracking-wider text-hotpink">{cat.category}</span>
+                        <span className="text-xs font-bold uppercase tracking-wider text-brandLogo-blue">{cat.category}</span>
                         <h2 className="text-2xl sm:text-3xl font-bold text-navy font-display">{cat.title}</h2>
                       </div>
                     </div>
 
-                    <p className="text-sm text-slate-grey leading-relaxed">{cat.desc}</p>
+                    <p className="text-sm text-slate-700 leading-relaxed font-medium">{cat.desc}</p>
 
                     <div className="space-y-2 pt-2">
                       {cat.items.map((point, i) => (
-                        <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-grey bg-white p-3 rounded-xl border border-border">
-                          <Check className="h-4 w-4 text-hotpink shrink-0 mt-0.5" />
+                        <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-800 bg-white p-3 rounded-xl border border-slate-200 shadow-2xs font-medium">
+                          <CheckCircle2 className="h-4 w-4 text-brandLogo-green shrink-0 mt-0.5" />
                           <span>{point}</span>
                         </div>
                       ))}
@@ -154,25 +160,25 @@ export default function AmenitiesPage() {
                     <div className="pt-2">
                       <Link
                         to="/contact"
-                        className="inline-flex items-center gap-2 rounded-full bg-hotpink px-6 py-2.5 text-xs font-bold text-white shadow-xs hover:bg-hotpink-hover transition"
+                        className="inline-flex items-center gap-2 rounded-full bg-navy px-6 py-2.5 text-xs font-bold text-white shadow-xs hover:bg-navy-light transition uppercase tracking-wider"
                       >
-                        <Calendar className="h-3.5 w-3.5" />
+                        <Calendar className="h-3.5 w-3.5 text-brandLogo-red" />
                         <span>Visit the Clubhouse</span>
                         <ArrowRight className="h-3.5 w-3.5" />
                       </Link>
                     </div>
                   </div>
 
-                  <div className={`relative h-64 sm:h-80 rounded-2xl overflow-hidden bg-white border border-border ${idx % 2 === 1 ? 'lg:col-span-5 lg:order-1' : 'lg:col-span-5'}`}>
+                  <div className={`relative h-64 sm:h-80 rounded-2xl overflow-hidden bg-white border border-slate-200 ${idx % 2 === 1 ? 'lg:col-span-5 lg:order-1' : 'lg:col-span-5'}`}>
                     <img
                       src={cat.img}
                       alt={cat.title}
                       className="h-full w-full object-cover transition duration-500 hover:scale-103"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-transparent" />
-                    <div className="absolute bottom-3 left-3 right-3 rounded-xl bg-white/95 backdrop-blur-md p-3 border border-border text-center">
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/60 via-transparent to-transparent" />
+                    <div className="absolute bottom-3 left-3 right-3 rounded-xl bg-white/95 backdrop-blur-md p-3 border border-slate-200 text-center shadow-xs">
                       <p className="text-xs font-bold text-navy">{cat.title}</p>
-                      <p className="text-[10px] text-slate-grey">Tirumala Meadows · Uppal</p>
+                      <p className="text-[10px] text-slate-500 font-medium">Tirumala Meadows · Jubilee Hills, Hyderabad</p>
                     </div>
                   </div>
 
@@ -184,38 +190,38 @@ export default function AmenitiesPage() {
       </section>
 
       {/* The Art of Integrated Luxury Ecosystem Banner */}
-      <section className="py-16 bg-navy text-white">
+      <section className="py-16 bg-navy text-white border-t border-white/10">
         <div className="mx-auto max-w-6xl px-6 text-center">
-          <span className="text-xs font-bold text-hotpink-light uppercase tracking-wider">
+          <span className="text-xs font-bold text-brandLogo-red uppercase tracking-wider">
             In-House Mastery
           </span>
           <h2 className="text-2xl sm:text-3xl font-bold font-display mt-1 text-white">
             The Art of Integrated Luxury
           </h2>
-          <p className="mt-3 text-xs sm:text-sm text-white/70 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-3 text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed">
             From architecture and structural engineering to smart home automation and bespoke interiors, our dedicated in-house team ensures uncompromising quality across every project.
           </p>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-8 text-left">
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-4">
-              <span className="text-hotpink font-bold text-xs uppercase block">01. Architecture</span>
+            <div className="bg-navy-surface border border-white/10 rounded-2xl p-4">
+              <span className="text-brandLogo-red font-bold text-xs uppercase block">01. Architecture</span>
               <p className="text-sm font-bold text-white font-display mt-0.5">In-House Architects</p>
-              <p className="text-[11px] text-white/50 mt-1">Distinctive architectural expressions & Vastu principles.</p>
+              <p className="text-[11px] text-slate-300 mt-1">Distinctive architectural expressions & Vastu principles.</p>
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-4">
-              <span className="text-hotpink font-bold text-xs uppercase block">02. Interiors</span>
+            <div className="bg-navy-surface border border-white/10 rounded-2xl p-4">
+              <span className="text-brandLogo-blue font-bold text-xs uppercase block">02. Interiors</span>
               <p className="text-sm font-bold text-white font-display mt-0.5">In-House Interior Designers</p>
-              <p className="text-[11px] text-white/50 mt-1">Curating bespoke and sophisticated luxury spaces.</p>
+              <p className="text-[11px] text-slate-300 mt-1">Curating bespoke and sophisticated luxury spaces.</p>
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-4">
-              <span className="text-hotpink font-bold text-xs uppercase block">03. Technology</span>
+            <div className="bg-navy-surface border border-white/10 rounded-2xl p-4">
+              <span className="text-brandLogo-green font-bold text-xs uppercase block">03. Technology</span>
               <p className="text-sm font-bold text-white font-display mt-0.5">In-House Tech Team</p>
-              <p className="text-[11px] text-white/50 mt-1">Intelligent automation & futuristic home technology.</p>
+              <p className="text-[11px] text-slate-300 mt-1">Intelligent automation & futuristic home technology.</p>
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-4">
-              <span className="text-hotpink font-bold text-xs uppercase block">04. Engineering</span>
+            <div className="bg-navy-surface border border-white/10 rounded-2xl p-4">
+              <span className="text-brandLogo-red font-bold text-xs uppercase block">04. Engineering</span>
               <p className="text-sm font-bold text-white font-display mt-0.5">In-House Engineers</p>
-              <p className="text-[11px] text-white/50 mt-1">Structural excellence & precision execution.</p>
+              <p className="text-[11px] text-slate-300 mt-1">Structural excellence & precision execution.</p>
             </div>
           </div>
         </div>

@@ -48,11 +48,11 @@ export default function TirumalaLogo({
 
       {showText && (
         <div className="flex flex-col leading-none">
-          <span className={`text-[11px] sm:text-[13px] font-extrabold tracking-[0.16em] sm:tracking-[0.20em] uppercase ${textColor} font-serif font-display whitespace-nowrap`}>
+          <span className={`text-[11px] sm:text-[13px] font-black tracking-[0.16em] sm:tracking-[0.20em] uppercase ${textColor} font-display whitespace-nowrap`}>
             TIRUMALA
           </span>
           <div className="flex items-center gap-1 mt-0.5 whitespace-nowrap">
-            <span className={`text-[8.5px] sm:text-[10px] font-semibold tracking-[0.22em] sm:tracking-[0.26em] uppercase ${textColor} opacity-85 font-serif font-display`}>
+            <span className={`text-[8.5px] sm:text-[10px] font-bold tracking-[0.22em] sm:tracking-[0.26em] uppercase ${textColor} opacity-85 font-display`}>
               MEADOWS
             </span>
             {showCorporate && (

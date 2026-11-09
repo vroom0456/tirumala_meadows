@@ -1,4 +1,5 @@
-import { X, Download, Printer, ShieldCheck, Check, Building2, MapPin, Award, CheckCircle2 } from 'lucide-react'
+import { useEffect } from 'react'
+import { X, Printer, ShieldCheck, CheckCircle2 } from 'lucide-react'
 import TirumalaLogo from './TirumalaLogo'
 
 interface BrochureModalProps {
@@ -7,6 +8,19 @@ interface BrochureModalProps {
 }
 
 export default function BrochureModal({ isOpen, onClose }: BrochureModalProps) {
+  useEffect(() => {
+    if (!isOpen) return
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose()
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+      document.body.style.overflow = 'auto'
+    }
+  }, [isOpen, onClose])
+
   if (!isOpen) return null
 
   const handlePrint = () => {
@@ -14,143 +28,156 @@ export default function BrochureModal({ isOpen, onClose }: BrochureModalProps) {
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-navy/70 backdrop-blur-sm p-4 overflow-y-auto">
-      <div className="relative w-full max-w-3xl rounded-3xl bg-white border border-border shadow-2xl p-6 sm:p-10 my-8">
-        
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute top-5 right-5 h-9 w-9 rounded-full border border-border bg-soft text-slate-grey hover:text-navy flex items-center justify-center transition"
-          aria-label="Close modal"
-        >
-          <X className="h-4 w-4" />
-        </button>
+    <div
+      className="fixed inset-0 z-[100] overflow-y-auto bg-neutral-900/45 backdrop-blur-xl flex items-start justify-center px-3 sm:px-6 pt-16 sm:pt-14 pb-24"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose()
+      }}
+      aria-modal="true"
+      role="dialog"
+    >
+      {/* Floating Close Button - Apple Style Glass Pill */}
+      <button
+        onClick={onClose}
+        className="fixed top-4 right-4 z-[110] h-10 w-10 sm:h-9 sm:w-9 rounded-full border border-stone-300/80 bg-white/90 text-stone-800 shadow-xl hover:bg-white flex items-center justify-center transition active:scale-95"
+        aria-label="Close factsheet"
+      >
+        <X className="h-4.5 w-4.5 text-stone-800" />
+      </button>
 
+      {/* Modal Container - Clean White Card with High-Contrast Text */}
+      <div className="relative w-full max-w-3xl rounded-3xl bg-white border border-stone-200 shadow-2xl p-6 sm:p-9 my-4 text-stone-900">
+        
         {/* Factsheet Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border pb-6">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-stone-200 pb-5 pr-8 sm:pr-0">
           <div>
             <TirumalaLogo className="h-10" showCorporate={true} />
-            <p className="text-xs font-serif italic text-navy/80 mt-1">
+            <p className="text-xs font-bold text-stone-800 mt-1.5 tracking-wide">
               "Quality For The Best Living" — 28 Years of Excellence
             </p>
           </div>
           <div className="text-left sm:text-right">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-200 px-3 py-0.5 text-[11px] font-bold text-emerald-800">
-              <CheckCircle2 className="h-3 w-3 text-emerald-600" />
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-300 px-3 py-1 text-[11px] font-bold text-emerald-900">
+              <CheckCircle2 className="h-3.5 w-3.5 text-emerald-700" />
               Corporate Portfolio Factsheet
             </span>
-            <p className="text-xs text-slate-grey mt-1">Registered Address: Jubilee Hills, Hyderabad (500 034)</p>
+            <p className="text-xs font-medium text-stone-600 mt-1">Registered Address: Jubilee Hills, Hyderabad (500 034)</p>
           </div>
         </div>
 
-        {/* Executive Summary Grid */}
+        {/* Executive Summary Grid - Bold high contrast numbers & labels */}
         <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
-          <div className="rounded-2xl bg-soft border border-border p-3.5 text-center">
-            <span className="text-[10px] uppercase font-bold text-slate-grey">Experience</span>
-            <p className="text-base font-extrabold text-navy font-display mt-0.5">28+ Years</p>
-            <span className="text-[10px] text-slate-grey">Real Estate & Construction</span>
+          <div className="rounded-2xl bg-stone-50 border border-stone-200 p-3.5 text-center shadow-2xs">
+            <span className="text-[10px] uppercase font-bold tracking-wider text-stone-600">Experience</span>
+            <p className="text-xl font-black text-stone-950 font-display mt-0.5">28+ Years</p>
+            <span className="text-[10.5px] font-medium text-stone-600">Real Estate & Construction</span>
           </div>
-          <div className="rounded-2xl bg-soft border border-border p-3.5 text-center">
-            <span className="text-[10px] uppercase font-bold text-slate-grey">Completed Villas</span>
-            <p className="text-base font-extrabold text-navy font-display mt-0.5">30+ Villas</p>
-            <span className="text-[10px] text-slate-grey">Particularly Jubilee Hills</span>
+          <div className="rounded-2xl bg-stone-50 border border-stone-200 p-3.5 text-center shadow-2xs">
+            <span className="text-[10px] uppercase font-bold tracking-wider text-stone-600">Completed Villas</span>
+            <p className="text-xl font-black text-stone-950 font-display mt-0.5">30+ Villas</p>
+            <span className="text-[10.5px] font-medium text-stone-600">Particularly Jubilee Hills</span>
           </div>
-          <div className="rounded-2xl bg-soft border border-border p-3.5 text-center">
-            <span className="text-[10px] uppercase font-bold text-slate-grey">Land Facilitated</span>
-            <p className="text-base font-extrabold text-navy font-display mt-0.5">3,000+ Acres</p>
-            <span className="text-[10px] text-slate-grey">Layout Development</span>
+          <div className="rounded-2xl bg-stone-50 border border-stone-200 p-3.5 text-center shadow-2xs">
+            <span className="text-[10px] uppercase font-bold tracking-wider text-stone-600">Land Facilitated</span>
+            <p className="text-xl font-black text-stone-950 font-display mt-0.5">3,000+ Acres</p>
+            <span className="text-[10.5px] font-medium text-stone-600">Layout Development</span>
           </div>
-          <div className="rounded-2xl bg-soft border border-border p-3.5 text-center">
-            <span className="text-[10px] uppercase font-bold text-slate-grey">Workforce</span>
-            <p className="text-base font-extrabold text-emerald-700 font-display mt-0.5">250+ Pros</p>
-            <span className="text-[10px] text-slate-grey">Dedicated In-House Team</span>
+          <div className="rounded-2xl bg-stone-50 border border-stone-200 p-3.5 text-center shadow-2xs">
+            <span className="text-[10px] uppercase font-bold tracking-wider text-stone-600">Workforce</span>
+            <p className="text-xl font-black text-stone-950 font-display mt-0.5">250+ Pros</p>
+            <span className="text-[10.5px] font-medium text-stone-600">Dedicated In-House Team</span>
           </div>
         </div>
 
         {/* In-House Integrated Ecosystem */}
-        <div className="mt-6 p-4 rounded-2xl bg-soft/70 border border-border">
-          <p className="text-xs font-bold uppercase tracking-wider text-navy font-display mb-2">
+        <div className="mt-6 p-4 sm:p-5 rounded-2xl bg-stone-50 border border-stone-200">
+          <p className="text-xs font-bold uppercase tracking-wider text-stone-900 font-display mb-2.5">
             The Art of Integrated Luxury — Dedicated In-House Ecosystem
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px] text-slate-grey">
-            <div className="bg-white p-2.5 rounded-xl border border-border/80">
-              <strong className="text-navy block">In-House Architects</strong>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-[11px] text-stone-700">
+            <div className="bg-white p-3 rounded-xl border border-stone-200 shadow-2xs">
+              <strong className="text-stone-950 block mb-0.5 font-bold">In-House Architects</strong>
               Distinctive architectural expressions
             </div>
-            <div className="bg-white p-2.5 rounded-xl border border-border/80">
-              <strong className="text-navy block">In-House Designers</strong>
+            <div className="bg-white p-3 rounded-xl border border-stone-200 shadow-2xs">
+              <strong className="text-stone-950 block mb-0.5 font-bold">In-House Designers</strong>
               Bespoke sophisticated spaces
             </div>
-            <div className="bg-white p-2.5 rounded-xl border border-border/80">
-              <strong className="text-navy block">In-House Tech Team</strong>
+            <div className="bg-white p-3 rounded-xl border border-stone-200 shadow-2xs">
+              <strong className="text-stone-950 block mb-0.5 font-bold">In-House Tech Team</strong>
               Intelligent home automation
             </div>
-            <div className="bg-white p-2.5 rounded-xl border border-border/80">
-              <strong className="text-navy block">In-House Engineers</strong>
+            <div className="bg-white p-3 rounded-xl border border-stone-200 shadow-2xs">
+              <strong className="text-stone-950 block mb-0.5 font-bold">In-House Engineers</strong>
               Structural execution excellence
             </div>
           </div>
         </div>
 
-        {/* Technical Highlights */}
-        <div className="mt-6 space-y-4">
-          <h4 className="text-xs font-bold uppercase tracking-wider text-navy font-display">
+        {/* Technical Highlights - High Visibility */}
+        <div className="mt-6 space-y-3.5">
+          <h4 className="text-xs font-bold uppercase tracking-wider text-stone-900 font-display">
             Architectural & Civil Specifications Summary
           </h4>
-          <div className="grid sm:grid-cols-2 gap-3 text-xs text-slate-grey">
-            <div className="rounded-xl border border-border p-3 bg-white">
-              <strong className="text-navy block mb-1">Civil Superstructure</strong>
-              Earthquake-resistant RCC framed structure with 9" thermal external and 4.5" internal clay/fly-ash brick masonry.
+          <div className="grid sm:grid-cols-2 gap-3 text-xs text-stone-700">
+            <div className="rounded-xl border border-stone-200 p-3.5 bg-stone-50">
+              <strong className="text-stone-950 block mb-1 font-bold">Civil Superstructure</strong>
+              Earthquake-resistant RCC framed structure with 9" thermal external and 4.5" internal masonry.
             </div>
-            <div className="rounded-xl border border-border p-3 bg-white">
-              <strong className="text-navy block mb-1">Flooring & Joinery</strong>
-              Polished marble & granite across living rooms; seasoned Indian Teak wood frame main door with polished finish.
+            <div className="rounded-xl border border-stone-200 p-3.5 bg-stone-50">
+              <strong className="text-stone-950 block mb-1 font-bold">Flooring & Joinery</strong>
+              Polished marble & granite across living rooms; seasoned Indian Teak wood frame main door.
             </div>
-            <div className="rounded-xl border border-border p-3 bg-white">
-              <strong className="text-navy block mb-1">Sanitary & Plumbing</strong>
-              Concealed CPVC pipelines, chrome-plated fittings from reputed brands, and 7-foot glazed tile dadoing.
+            <div className="rounded-xl border border-stone-200 p-3.5 bg-stone-50">
+              <strong className="text-stone-950 block mb-1 font-bold">Sanitary & Plumbing</strong>
+              Concealed CPVC pipelines, chrome-plated fittings from reputed brands, and 7-foot glazed tiles.
             </div>
-            <div className="rounded-xl border border-border p-3 bg-white">
-              <strong className="text-navy block mb-1">Township Utilities</strong>
-              Dedicated on-site STP, rainwater harvesting pits, overhead water reservoirs, and underground electrical cabling.
+            <div className="rounded-xl border border-stone-200 p-3.5 bg-stone-50">
+              <strong className="text-stone-950 block mb-1 font-bold">Township Utilities</strong>
+              Dedicated on-site STP, rainwater harvesting pits, water reservoirs, and underground cabling.
             </div>
           </div>
         </div>
 
         {/* Banking Partners & Approvals */}
-        <div className="mt-6 pt-5 border-t border-border">
+        <div className="mt-6 pt-5 border-t border-stone-200">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
-              <p className="text-xs font-bold text-navy uppercase tracking-wide font-display">
+              <p className="text-xs font-bold text-stone-900 uppercase tracking-wide font-display">
                 Approved Home Loan Banking Institutions
               </p>
-              <div className="flex flex-wrap items-center gap-3 mt-2 text-xs font-bold text-slate-grey">
-                <span className="rounded-lg bg-soft px-3 py-1 border border-border">State Bank of India (SBI)</span>
-                <span className="rounded-lg bg-soft px-3 py-1 border border-border">HDFC Bank</span>
-                <span className="rounded-lg bg-soft px-3 py-1 border border-border">ICICI Bank</span>
-                <span className="rounded-lg bg-soft px-3 py-1 border border-border">Axis Bank</span>
+              <div className="flex flex-wrap items-center gap-2 sm:gap-2.5 mt-2 text-xs font-bold text-stone-800">
+                <span className="rounded-lg bg-stone-100 px-3 py-1 border border-stone-200">State Bank of India (SBI)</span>
+                <span className="rounded-lg bg-stone-100 px-3 py-1 border border-stone-200">HDFC Bank</span>
+                <span className="rounded-lg bg-stone-100 px-3 py-1 border border-stone-200">ICICI Bank</span>
+                <span className="rounded-lg bg-stone-100 px-3 py-1 border border-stone-200">Axis Bank</span>
               </div>
             </div>
 
             <div className="flex items-center gap-2">
               <button
                 onClick={handlePrint}
-                className="inline-flex items-center gap-1.5 rounded-full border border-border bg-soft px-4 py-2 text-xs font-bold text-navy hover:bg-white transition"
+                className="inline-flex items-center gap-1.5 rounded-full border border-stone-900 bg-stone-900 text-white px-4 py-2 text-xs font-bold hover:bg-stone-800 transition"
               >
-                <Printer className="h-3.5 w-3.5 text-navy" />
+                <Printer className="h-3.5 w-3.5" />
                 <span>Print Factsheet</span>
+              </button>
+              <button
+                onClick={onClose}
+                className="inline-flex items-center gap-1.5 rounded-full border border-stone-300 bg-stone-100 px-4 py-2 text-xs font-bold text-stone-800 hover:bg-stone-200 transition"
+              >
+                <span>Close</span>
               </button>
             </div>
           </div>
         </div>
 
         {/* Footer Note */}
-        <div className="mt-6 pt-4 border-t border-border flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-grey gap-2">
-          <span><strong>Tirumala Meadows Private Limited</strong> · Contact: +91 95508 28688</span>
+        <div className="mt-6 pt-4 border-t border-stone-200 flex flex-col sm:flex-row items-center justify-between text-[11px] text-stone-700 font-medium gap-2">
+          <span><strong className="text-stone-950">Tirumala Meadows Private Limited</strong> · Contact: +91 95508 28688</span>
           <span>Registered Address: Jubilee Hills - Hyderabad (500 034)</span>
         </div>
       </div>
     </div>
   )
 }
-
