@@ -51,15 +51,15 @@ export default function Navbar() {
 
       {/* Floating Apple-Grade Frosted Glass Nav */}
       <header
-        className={`sticky top-3 z-40 mx-auto w-[calc(100%-2rem)] max-w-6xl transition-all duration-300 rounded-full ${
+        className={`sticky top-2 sm:top-3 z-40 mx-auto w-[calc(100%-1rem)] sm:w-[calc(100%-2rem)] max-w-6xl transition-all duration-300 rounded-full ${
           scrolled
-            ? 'bg-white/94 backdrop-blur-xl shadow-corporate-hover border border-border py-2'
-            : 'bg-white/85 backdrop-blur-md shadow-corporate border border-border/80 py-2.5'
+            ? 'bg-white/95 backdrop-blur-xl shadow-corporate-hover border border-border py-1.5 sm:py-2'
+            : 'bg-white/90 backdrop-blur-md shadow-corporate border border-border/80 py-2 sm:py-2.5'
         }`}
       >
-        <div className="flex items-center justify-between px-5 sm:px-6">
+        <div className="flex items-center justify-between px-3 sm:px-6">
           {/* Logo with Exact Colors */}
-          <Link to="/" className="flex items-center group">
+          <Link to="/" className="flex items-center group shrink-0">
             <TirumalaLogo />
           </Link>
 
@@ -81,7 +81,7 @@ export default function Navbar() {
           </nav>
 
           {/* Corporate Action Elements */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-3">
             {/* Factsheet PDF Button */}
             <button
               onClick={() => setIsBrochureOpen(true)}
@@ -94,16 +94,17 @@ export default function Navbar() {
             {/* Hot Pink Primary CTA */}
             <Link
               to="/contact"
-              className="inline-flex items-center gap-1.5 rounded-full bg-hotpink px-5 py-2 text-xs font-bold text-white shadow-hotpink-pill hover:bg-hotpink-hover hover:scale-102 active:scale-98 transition-all"
+              className="inline-flex items-center gap-1 sm:gap-1.5 rounded-full bg-hotpink px-3.5 sm:px-5 py-1.5 sm:py-2 text-[11px] sm:text-xs font-bold text-white shadow-hotpink-pill hover:bg-hotpink-hover hover:scale-102 active:scale-98 transition-all whitespace-nowrap"
             >
-              <span>Schedule Visit</span>
-              <ArrowRight className="h-3.5 w-3.5" />
+              <span>Visit</span>
+              <span className="hidden xs:inline">Desk</span>
+              <ArrowRight className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
             </Link>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setOpen(!open)}
-              className="lg:hidden h-9 w-9 rounded-full flex items-center justify-center text-navy hover:bg-soft transition"
+              className="lg:hidden h-8 w-8 sm:h-9 sm:w-9 rounded-full flex items-center justify-center text-navy hover:bg-soft transition shrink-0"
               aria-label="Toggle navigation menu"
             >
               {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
@@ -113,20 +114,20 @@ export default function Navbar() {
 
         {/* Mobile Drawer */}
         {open && (
-          <div className="lg:hidden border-t border-border bg-white rounded-b-3xl px-6 py-4 space-y-1.5 shadow-xl mt-2">
+          <div className="lg:hidden border-t border-border bg-white rounded-b-3xl px-5 py-4 space-y-1 shadow-xl mt-2">
             {navLinks.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
                 onClick={() => setOpen(false)}
-                className={`block px-4 py-2.5 rounded-xl text-sm font-semibold transition ${
+                className={`block px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition ${
                   loc.pathname === l.to ? 'bg-soft text-navy font-bold' : 'text-slate-grey hover:bg-soft'
                 }`}
               >
                 {l.label}
               </Link>
             ))}
-            <div className="pt-2 border-t border-border">
+            <div className="pt-2 border-t border-border flex flex-col gap-2">
               <button
                 onClick={() => {
                   setOpen(false)
@@ -137,6 +138,13 @@ export default function Navbar() {
                 <FileText className="h-4 w-4 text-hotpink" />
                 <span>Download Project Factsheet</span>
               </button>
+              <a
+                href="tel:+919550828688"
+                className="w-full flex items-center justify-center gap-2 rounded-xl bg-navy py-2.5 text-xs font-bold text-white"
+              >
+                <Phone className="h-4 w-4 text-hotpink" />
+                <span>Call +91 95508 28688</span>
+              </a>
             </div>
           </div>
         )}

@@ -435,107 +435,110 @@ export default function HomePage() {
       {/* ═════════════════════════════════════════════════════════════════ */}
       {/* 1. CORPORATE HERO SECTION (Official Identity & Legacy)            */}
       {/* ═════════════════════════════════════════════════════════════════ */}
-      <section className="relative pt-20 pb-16 sm:pt-28 sm:pb-24 overflow-hidden border-b border-border bg-gradient-to-b from-soft via-white to-white">
+      <section className="relative pt-12 pb-12 sm:pt-28 sm:pb-24 overflow-hidden border-b border-border bg-gradient-to-b from-soft via-white to-white">
         <div className="absolute top-10 right-1/4 w-[500px] h-[500px] rounded-full bg-hotpink/[0.03] blur-[130px] pointer-events-none" />
 
-        <div className="mx-auto max-w-6xl px-6 text-center">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 text-center">
           {/* Corporate Badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-1.5 text-xs font-semibold text-slate-grey shadow-xs mb-6">
-            <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-border bg-white px-3 sm:px-4 py-1 sm:py-1.5 text-[10px] sm:text-xs font-semibold text-slate-grey shadow-xs mb-4 sm:mb-6 max-w-full overflow-hidden text-ellipsis whitespace-nowrap">
+            <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
             <span className="text-navy font-bold">28 Years of Excellence</span>
             <span className="text-border">·</span>
-            <span className="text-hotpink font-bold">A Legacy of Distinction</span>
+            <span className="text-hotpink font-bold truncate">A Legacy of Distinction</span>
             <span className="text-border hidden sm:inline">·</span>
             <span className="text-slate-grey hidden sm:inline">Jubilee Hills, Hyderabad</span>
           </div>
 
           {/* Main Title */}
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-navy leading-[1.08] font-display max-w-4xl mx-auto">
+          <h1 className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-navy leading-[1.12] sm:leading-[1.08] font-display max-w-4xl mx-auto">
             TIRUMALA MEADOWS{' '}
-            <span className="block text-2xl sm:text-4xl lg:text-5xl font-serif text-slate-grey font-normal tracking-normal mt-2 italic">
+            <span className="block text-base sm:text-3xl md:text-4xl lg:text-5xl font-serif text-slate-grey font-normal tracking-normal mt-1.5 sm:mt-2 italic">
               "Quality For The Best Living"
             </span>
           </h1>
 
           {/* Corporate Value Proposition */}
-          <p className="mt-6 text-base sm:text-lg text-slate-grey max-w-3xl mx-auto leading-relaxed">
+          <p className="mt-3.5 sm:mt-6 text-xs sm:text-base md:text-lg text-slate-grey max-w-3xl mx-auto leading-relaxed px-1">
             For over <strong>28 years</strong>, Tirumala Meadows Private Limited has been driven by an enduring passion for architectural excellence, refined aesthetics, and the creation of extraordinary living spaces. With a distinguished portfolio of <strong>30+ completed exclusive luxury villas</strong> in <strong>Jubilee Hills, Hyderabad</strong>, our residences are cherished by eminent politicians, celebrated film personalities, industrialists, and prominent business families.
           </p>
 
-          {/* Action Buttons */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+          {/* Action Buttons (Mobile-Optimized Grid / Stack) */}
+          <div className="mt-6 sm:mt-8 flex flex-col xs:flex-row flex-wrap items-stretch xs:items-center justify-center gap-2.5 sm:gap-4 max-w-md sm:max-w-none mx-auto">
             <a
               href="#portfolio"
-              className="inline-flex items-center gap-2 rounded-full bg-hotpink px-7 py-3.5 text-xs sm:text-sm font-bold text-white shadow-hotpink-pill hover:bg-hotpink-hover hover:-translate-y-0.5 active:translate-y-0 transition-all"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-hotpink px-5 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-sm font-bold text-white shadow-hotpink-pill hover:bg-hotpink-hover hover:-translate-y-0.5 active:translate-y-0 transition-all text-center"
             >
-              <Eye className="h-4 w-4" />
+              <Eye className="h-4 w-4 shrink-0" />
               <span>Explore Landmark Portfolio</span>
-              <ArrowRight className="h-4 w-4" />
+              <ArrowRight className="h-4 w-4 shrink-0" />
             </a>
 
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-emerald-300 bg-emerald-50 px-6 py-3.5 text-xs sm:text-sm font-bold text-emerald-800 hover:bg-emerald-100 transition shadow-xs"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-emerald-300 bg-emerald-50 px-4.5 sm:px-6 py-2.5 sm:py-3.5 text-xs sm:text-sm font-bold text-emerald-800 hover:bg-emerald-100 transition shadow-xs text-center"
             >
-              <MessageSquare className="h-4 w-4 text-emerald-600" />
+              <MessageSquare className="h-4 w-4 text-emerald-600 shrink-0" />
               <span>WhatsApp Concierge</span>
             </a>
 
             <button
               onClick={() => setIsBrochureOpen(true)}
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-6 py-3.5 text-xs sm:text-sm font-semibold text-navy hover:bg-soft hover:border-navy transition shadow-xs"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-white px-4.5 sm:px-6 py-2.5 sm:py-3.5 text-xs sm:text-sm font-semibold text-navy hover:bg-soft hover:border-navy transition shadow-xs text-center"
             >
-              <FileText className="h-4 w-4 text-hotpink" />
+              <FileText className="h-4 w-4 text-hotpink shrink-0" />
               <span>Corporate Factsheet</span>
             </button>
           </div>
 
           {/* Corporate Subtitle */}
-          <p className="mt-5 text-xs text-slate-grey">
-            Registered Address: <strong>Jubilee Hills - Hyderabad (500 034)</strong> · Contact: <a href="tel:+919550828688" className="font-bold text-navy hover:underline">+91 95508 28688</a>
+          <p className="mt-4 sm:mt-5 text-[11px] sm:text-xs text-slate-grey leading-relaxed">
+            Registered Address: <strong>Jubilee Hills - Hyderabad (500 034)</strong> · Contact:{' '}
+            <a href="tel:+919550828688" className="font-bold text-navy hover:underline whitespace-nowrap">
+              +91 95508 28688
+            </a>
           </p>
         </div>
 
         {/* HERO FEATURED REAL IMAGES SHOWCASE */}
-        <div className="mx-auto max-w-6xl px-6 mt-12 sm:mt-16">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-stretch">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 mt-8 sm:mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-3.5 sm:gap-4 items-stretch">
             {/* Main Featured Photo (Jubilee Hills Facade at Dusk) */}
-            <div className="md:col-span-7 rounded-3xl overflow-hidden border border-border bg-navy relative group shadow-corporate">
+            <div className="md:col-span-7 rounded-2xl sm:rounded-3xl overflow-hidden border border-border bg-navy relative group shadow-corporate">
               <img
                 src="/portfolio/jubilee-hills-facade-dusk.jpg"
                 alt="Tirumala Meadows Jubilee Hills Luxury Villa Dusk"
-                className="w-full h-80 sm:h-96 object-cover object-center group-hover:scale-103 transition-transform duration-700"
+                className="w-full h-56 sm:h-80 md:h-96 object-cover object-center group-hover:scale-103 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent flex flex-col justify-end p-6 sm:p-8 text-white">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-hotpink-light">
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent flex flex-col justify-end p-4 sm:p-6 md:p-8 text-white">
+                <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-hotpink-light">
                   Completed Signature Villa · Jubilee Hills, Hyderabad
                 </span>
-                <h3 className="text-xl sm:text-2xl font-bold font-display mt-1">
+                <h3 className="text-base sm:text-xl md:text-2xl font-bold font-display mt-0.5 sm:mt-1">
                   Architectural Distinction & Integrated Lighting
                 </h3>
-                <p className="text-xs text-white/70 mt-1 max-w-lg">
+                <p className="text-[11px] sm:text-xs text-white/70 mt-0.5 sm:mt-1 max-w-lg line-clamp-2 sm:line-clamp-none">
                   Custom geometric light portals, double-height motor court, and palatial stone masonry crafted by our in-house team.
                 </p>
               </div>
             </div>
 
             {/* Secondary Photo (Regal White Estate) */}
-            <div className="md:col-span-5 rounded-3xl overflow-hidden border border-border bg-navy relative group shadow-corporate">
+            <div className="md:col-span-5 rounded-2xl sm:rounded-3xl overflow-hidden border border-border bg-navy relative group shadow-corporate">
               <img
                 src="/portfolio/jubilee-hills-regal-estate.jpg"
                 alt="Tirumala Meadows Regal Classical Estate"
-                className="w-full h-80 sm:h-96 object-cover object-center group-hover:scale-103 transition-transform duration-700"
+                className="w-full h-56 sm:h-80 md:h-96 object-cover object-center group-hover:scale-103 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent flex flex-col justify-end p-6 sm:p-8 text-white">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-300">
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent flex flex-col justify-end p-4 sm:p-6 md:p-8 text-white">
+                <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-emerald-300">
                   Neoclassical Estate · 100% Vastu
                 </span>
-                <h3 className="text-lg sm:text-xl font-bold font-display mt-1">
+                <h3 className="text-base sm:text-lg md:text-xl font-bold font-display mt-0.5 sm:mt-1">
                   Classical White Villa Estate
                 </h3>
-                <p className="text-xs text-white/70 mt-1">
+                <p className="text-[11px] sm:text-xs text-white/70 mt-0.5 sm:mt-1 line-clamp-2 sm:line-clamp-none">
                   Arched colonnades, pristine stone finish, private courtyards, and rooftop sky lounge.
                 </p>
               </div>
@@ -547,52 +550,52 @@ export default function HomePage() {
       {/* ═════════════════════════════════════════════════════════════════ */}
       {/* 2. CORPORATE FOOTPRINT (Key Real Company Statistics)               */}
       {/* ═════════════════════════════════════════════════════════════════ */}
-      <section className="py-16 bg-navy text-white border-b border-navy-light/40">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <span className="text-xs font-bold text-hotpink-light uppercase tracking-wider">Corporate Footprint</span>
-            <h2 className="text-2xl sm:text-3xl font-bold font-display mt-1 text-white">
+      <section className="py-12 sm:py-16 bg-navy text-white border-b border-navy-light/40">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+            <span className="text-[10px] sm:text-xs font-bold text-hotpink-light uppercase tracking-wider">Corporate Footprint</span>
+            <h2 className="text-xl sm:text-3xl font-bold font-display mt-1 text-white">
               A Legacy of Distinction Across 28+ Years
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            <div ref={cYears.ref} className="rounded-3xl bg-white/5 border border-white/10 p-6 text-center hover:bg-white/10 transition">
-              <p className="text-3xl sm:text-5xl font-extrabold text-white font-display tracking-tight">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+            <div ref={cYears.ref} className="rounded-2xl sm:rounded-3xl bg-white/5 border border-white/10 p-4 sm:p-6 text-center hover:bg-white/10 transition">
+              <p className="text-2xl sm:text-5xl font-extrabold text-white font-display tracking-tight">
                 {cYears.count}+
               </p>
-              <p className="text-xs font-bold text-white/90 mt-2">Years of Excellence</p>
-              <p className="text-[11px] text-white/50 mt-0.5">Real estate & construction</p>
+              <p className="text-[11px] sm:text-xs font-bold text-white/90 mt-1.5 sm:mt-2">Years of Excellence</p>
+              <p className="text-[9.5px] sm:text-[11px] text-white/50 mt-0.5">Real estate & construction</p>
             </div>
 
-            <div ref={cVillas.ref} className="rounded-3xl bg-white/5 border border-white/10 p-6 text-center hover:bg-white/10 transition">
-              <p className="text-3xl sm:text-5xl font-extrabold text-hotpink-light font-display tracking-tight">
+            <div ref={cVillas.ref} className="rounded-2xl sm:rounded-3xl bg-white/5 border border-white/10 p-4 sm:p-6 text-center hover:bg-white/10 transition">
+              <p className="text-2xl sm:text-5xl font-extrabold text-hotpink-light font-display tracking-tight">
                 {cVillas.count}+
               </p>
-              <p className="text-xs font-bold text-white/90 mt-2">Completed Luxury Villas</p>
-              <p className="text-[11px] text-white/50 mt-0.5">Particularly in Jubilee Hills</p>
+              <p className="text-[11px] sm:text-xs font-bold text-white/90 mt-1.5 sm:mt-2">Completed Luxury Villas</p>
+              <p className="text-[9.5px] sm:text-[11px] text-white/50 mt-0.5">Particularly in Jubilee Hills</p>
             </div>
 
-            <div ref={cAcres.ref} className="rounded-3xl bg-white/5 border border-white/10 p-6 text-center hover:bg-white/10 transition">
-              <p className="text-3xl sm:text-5xl font-extrabold text-white font-display tracking-tight">
+            <div ref={cAcres.ref} className="rounded-2xl sm:rounded-3xl bg-white/5 border border-white/10 p-4 sm:p-6 text-center hover:bg-white/10 transition">
+              <p className="text-2xl sm:text-5xl font-extrabold text-white font-display tracking-tight">
                 {cAcres.count.toLocaleString()}+
               </p>
-              <p className="text-xs font-bold text-white/90 mt-2">Acres Facilitated</p>
-              <p className="text-[11px] text-white/50 mt-0.5">Acquired for layout development</p>
+              <p className="text-[11px] sm:text-xs font-bold text-white/90 mt-1.5 sm:mt-2">Acres Facilitated</p>
+              <p className="text-[9.5px] sm:text-[11px] text-white/50 mt-0.5">Acquired for layout development</p>
             </div>
 
-            <div ref={cTeam.ref} className="rounded-3xl bg-white/5 border border-white/10 p-6 text-center hover:bg-white/10 transition">
-              <p className="text-3xl sm:text-5xl font-extrabold text-emerald-400 font-display tracking-tight">
+            <div ref={cTeam.ref} className="rounded-2xl sm:rounded-3xl bg-white/5 border border-white/10 p-4 sm:p-6 text-center hover:bg-white/10 transition">
+              <p className="text-2xl sm:text-5xl font-extrabold text-emerald-400 font-display tracking-tight">
                 {cTeam.count}+
               </p>
-              <p className="text-xs font-bold text-white/90 mt-2">In-House Professionals</p>
-              <p className="text-[11px] text-white/50 mt-0.5">Dedicated integrated workforce</p>
+              <p className="text-[11px] sm:text-xs font-bold text-white/90 mt-1.5 sm:mt-2">In-House Professionals</p>
+              <p className="text-[9.5px] sm:text-[11px] text-white/50 mt-0.5">Dedicated integrated workforce</p>
             </div>
           </div>
 
           {/* Distinguished Clientele Strip */}
-          <div className="mt-12 rounded-2xl bg-white/5 border border-white/10 p-6 text-center max-w-3xl mx-auto">
-            <span className="text-[10px] uppercase font-bold tracking-widest text-white/40 block mb-1">
+          <div className="mt-8 sm:mt-12 rounded-2xl bg-white/5 border border-white/10 p-4 sm:p-6 text-center max-w-3xl mx-auto">
+            <span className="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-white/40 block mb-1">
               Distinguished Patrons & Clientele
             </span>
             <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
@@ -1448,28 +1451,28 @@ export default function HomePage() {
       {/* ═════════════════════════════════════════════════════════════════ */}
       {/* STICKY MOBILE CONVERSION BAR                                      */}
       {/* ═════════════════════════════════════════════════════════════════ */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-border p-3 flex sm:hidden items-center justify-between gap-2 shadow-lg">
+      <div className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-border px-3 py-2 flex sm:hidden items-center justify-between gap-2 shadow-2xl safe-area-pb">
         <a
           href="tel:+919550828688"
-          className="flex-1 flex items-center justify-center gap-1.5 rounded-full border border-border bg-soft py-2.5 text-xs font-bold text-navy"
+          className="flex-1 flex items-center justify-center gap-1 rounded-full border border-border bg-soft py-2 text-[11px] font-bold text-navy active:scale-97 transition"
         >
-          <Phone className="h-3.5 w-3.5 text-hotpink" />
-          <span>Call Desk</span>
+          <Phone className="h-3 w-3 text-hotpink shrink-0" />
+          <span>Call</span>
         </a>
         <a
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 flex items-center justify-center gap-1.5 rounded-full bg-emerald-600 py-2.5 text-xs font-bold text-white shadow-xs"
+          className="flex-1 flex items-center justify-center gap-1 rounded-full bg-emerald-600 py-2 text-[11px] font-bold text-white shadow-xs active:scale-97 transition"
         >
-          <MessageSquare className="h-3.5 w-3.5" />
+          <MessageSquare className="h-3 w-3 shrink-0" />
           <span>WhatsApp</span>
         </a>
         <Link
           to="/contact"
-          className="flex-1 flex items-center justify-center gap-1.5 rounded-full bg-hotpink py-2.5 text-xs font-bold text-white shadow-hotpink-pill"
+          className="flex-1 flex items-center justify-center gap-1 rounded-full bg-hotpink py-2 text-[11px] font-bold text-white shadow-hotpink-pill active:scale-97 transition"
         >
-          <Calendar className="h-3.5 w-3.5" />
+          <Calendar className="h-3 w-3 shrink-0" />
           <span>Consult</span>
         </Link>
       </div>

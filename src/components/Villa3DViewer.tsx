@@ -154,55 +154,55 @@ export default function Villa3DViewer() {
     <div className="rounded-3xl border border-border bg-white shadow-corporate overflow-hidden">
       
       {/* ─── Top Control Toolbar ─── */}
-      <div className="border-b border-border bg-soft p-4 sm:p-5 flex flex-wrap items-center justify-between gap-4">
+      <div className="border-b border-border bg-soft p-3 sm:p-5 flex flex-wrap items-center justify-between gap-2.5 sm:gap-4">
         
         {/* Left: Mode Selector */}
-        <div className="flex flex-wrap items-center gap-1.5 p-1 rounded-full bg-white border border-border">
+        <div className="flex items-center gap-1 p-1 rounded-full bg-white border border-border w-full sm:w-auto overflow-x-auto">
           <button
             onClick={() => setMode('isometric')}
-            className={`inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold transition ${
+            className={`flex-1 sm:flex-initial inline-flex items-center justify-center gap-1 sm:gap-1.5 px-2.5 sm:px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-bold transition whitespace-nowrap ${
               mode === 'isometric'
                 ? 'bg-navy text-white shadow-xs'
                 : 'text-slate-grey hover:text-navy'
             }`}
           >
-            <Box className="h-3.5 w-3.5 text-hotpink" />
-            <span>3D Isometric Model</span>
+            <Box className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-hotpink" />
+            <span>3D Isometric</span>
           </button>
 
           <button
             onClick={() => setMode('cad')}
-            className={`inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold transition ${
+            className={`flex-1 sm:flex-initial inline-flex items-center justify-center gap-1 sm:gap-1.5 px-2.5 sm:px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-bold transition whitespace-nowrap ${
               mode === 'cad'
                 ? 'bg-navy text-white shadow-xs'
                 : 'text-slate-grey hover:text-navy'
             }`}
           >
-            <Layers className="h-3.5 w-3.5 text-hotpink" />
-            <span>2D Engineering CAD</span>
+            <Layers className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-hotpink" />
+            <span>2D CAD</span>
           </button>
 
           <button
             onClick={() => setMode('walkthrough')}
-            className={`inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold transition ${
+            className={`flex-1 sm:flex-initial inline-flex items-center justify-center gap-1 sm:gap-1.5 px-2.5 sm:px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-bold transition whitespace-nowrap ${
               mode === 'walkthrough'
                 ? 'bg-navy text-white shadow-xs'
                 : 'text-slate-grey hover:text-navy'
             }`}
           >
-            <Eye className="h-3.5 w-3.5 text-hotpink" />
-            <span>Virtual Walkthrough</span>
+            <Eye className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-hotpink" />
+            <span>Walkthrough</span>
           </button>
         </div>
 
         {/* Right: Floor Level & Toggles */}
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 w-full sm:w-auto justify-between sm:justify-start">
           {/* Floor Level */}
-          <div className="flex items-center gap-1 p-1 rounded-full bg-white border border-border">
+          <div className="flex items-center gap-0.5 sm:gap-1 p-0.5 sm:p-1 rounded-full bg-white border border-border">
             {[
-              { id: 'ground', label: 'Ground Floor' },
-              { id: 'first', label: 'First Floor' },
-              { id: 'terrace', label: 'Rooftop Terrace' },
+              { id: 'ground', label: 'Ground' },
+              { id: 'first', label: 'First' },
+              { id: 'terrace', label: 'Terrace' },
             ].map((f) => (
               <button
                 key={f.id}
@@ -210,7 +210,7 @@ export default function Villa3DViewer() {
                   setFloor(f.id as FloorLevel)
                   setSelectedHotspot(roomHotspots[f.id as FloorLevel][0])
                 }}
-                className={`px-3 py-1 rounded-full text-xs font-semibold transition ${
+                className={`px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold transition whitespace-nowrap ${
                   floor === f.id
                     ? 'bg-navy text-white font-bold'
                     : 'text-slate-grey hover:text-navy'

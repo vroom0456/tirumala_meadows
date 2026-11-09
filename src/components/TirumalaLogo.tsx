@@ -7,7 +7,7 @@ interface TirumalaLogoProps {
 }
 
 export default function TirumalaLogo({
-  className = 'h-8',
+  className = 'h-7 sm:h-8',
   showText = true,
   textColor = 'text-navy',
   showCorporate = true,
@@ -15,18 +15,18 @@ export default function TirumalaLogo({
 }: TirumalaLogoProps) {
   if (variant === 'image') {
     return (
-      <div className={`flex items-center gap-2.5 ${className}`}>
+      <div className={`flex items-center gap-2 sm:gap-2.5 ${className}`}>
         <img
           src="/logo.jpg"
           alt="Tirumala Meadows Private Limited"
-          className="h-8 w-auto object-contain rounded-sm"
+          className="h-7 sm:h-8 w-auto object-contain rounded-xs"
         />
       </div>
     )
   }
 
   return (
-    <div className={`flex items-center gap-2.5 ${className}`}>
+    <div className={`flex items-center gap-2 sm:gap-2.5 ${className}`}>
       {/* 
         Exact geometric mark from official logo:
         - Top bar: Primary Red #E63422
@@ -35,7 +35,7 @@ export default function TirumalaLogo({
       */}
       <svg
         viewBox="0 0 100 100"
-        className="h-8 w-8 shrink-0 rounded-xs shadow-xs"
+        className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 shrink-0 rounded-xs shadow-xs"
         aria-label="Tirumala Meadows Official Emblem"
       >
         {/* Top Red block (#E63422) */}
@@ -48,15 +48,15 @@ export default function TirumalaLogo({
 
       {showText && (
         <div className="flex flex-col leading-none">
-          <span className={`text-[13px] font-extrabold tracking-[0.20em] uppercase ${textColor} font-serif font-display`}>
+          <span className={`text-[11px] sm:text-[13px] font-extrabold tracking-[0.16em] sm:tracking-[0.20em] uppercase ${textColor} font-serif font-display whitespace-nowrap`}>
             TIRUMALA
           </span>
-          <div className="flex items-center gap-1 mt-0.5">
-            <span className={`text-[10px] font-semibold tracking-[0.26em] uppercase ${textColor} opacity-85 font-serif font-display`}>
+          <div className="flex items-center gap-1 mt-0.5 whitespace-nowrap">
+            <span className={`text-[8.5px] sm:text-[10px] font-semibold tracking-[0.22em] sm:tracking-[0.26em] uppercase ${textColor} opacity-85 font-serif font-display`}>
               MEADOWS
             </span>
             {showCorporate && (
-              <span className={`text-[7px] font-bold tracking-[0.14em] uppercase ${textColor} opacity-60 font-sans border-l border-current/30 pl-1`}>
+              <span className={`text-[6.5px] sm:text-[7px] font-bold tracking-[0.12em] uppercase ${textColor} opacity-60 font-sans border-l border-current/30 pl-1`}>
                 PVT LTD
               </span>
             )}
