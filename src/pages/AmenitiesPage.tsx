@@ -21,8 +21,8 @@ const amenityCategories = [
   {
     category: 'Clubhouse & Social',
     icon: Building2,
-    title: 'The Central Clubhouse',
-    desc: 'The vibrant social center of the 14-acre community for recreation, indoor sports, and family functions.',
+    title: 'The Central Clubhouse & Social Life',
+    desc: 'The vibrant social center of the community for recreation, indoor sports, and distinguished family celebrations.',
     items: [
       'Private 40-seat Mini Movie Screening Theatre',
       'Air-conditioned Banquet & Community Party Hall',
@@ -30,7 +30,7 @@ const amenityCategories = [
       'Table Tennis, Billiards & Indoor Board Games',
       'Resident Society Boardroom & Conference Facility',
     ],
-    img: '/luxury-villas.jpg',
+    img: '/portfolio/jubilee-hills-facade-dusk.jpg',
   },
   {
     category: 'Wellness & Aquatics',
@@ -44,12 +44,12 @@ const amenityCategories = [
       'Tree-shaded Jogging and Cycling perimeter track',
       'Open-air Yoga and Meditation Pavilion in landscaped gardens',
     ],
-    img: '/residential.jpg',
+    img: '/portfolio/modern-minimalist-villa-night.jpg',
   },
   {
     category: 'Nature & Sustainability',
     icon: Trees,
-    title: 'Landscaped Green Parks',
+    title: 'Landscaped Green Parks & Eco Buffer',
     desc: 'Generous open green areas ensuring fresh air, clean oxygen, and a tranquil escape from urban congestion.',
     items: [
       'Themed botanical gardens and flowering seasonal trees',
@@ -58,7 +58,7 @@ const amenityCategories = [
       '100% Vastu-compliant layout for natural energy flow',
       'Senior citizen relaxation gazebos and paved walking paths',
     ],
-    img: '/commercial.jpg',
+    img: '/portfolio/contemporary-villa-daylight.jpg',
   },
   {
     category: 'Family Convenience & Safety',
@@ -72,7 +72,7 @@ const amenityCategories = [
       'Pressurized 24-hour dual water supply via overhead reservoirs',
       'Diesel generator power backup for avenue streetlights and clubhouse',
     ],
-    img: '/industrial.jpg',
+    img: '/portfolio/jubilee-hills-regal-estate.jpg',
   },
 ]
 
@@ -180,6 +180,44 @@ export default function AmenitiesPage() {
               </div>
             )
           })}
+        </div>
+      </section>
+
+      {/* The Art of Integrated Luxury Ecosystem Banner */}
+      <section className="py-16 bg-navy text-white">
+        <div className="mx-auto max-w-6xl px-6 text-center">
+          <span className="text-xs font-bold text-hotpink-light uppercase tracking-wider">
+            In-House Mastery
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-bold font-display mt-1 text-white">
+            The Art of Integrated Luxury
+          </h2>
+          <p className="mt-3 text-xs sm:text-sm text-white/70 max-w-2xl mx-auto leading-relaxed">
+            From architecture and structural engineering to smart home automation and bespoke interiors, our dedicated in-house team ensures uncompromising quality across every project.
+          </p>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-8 text-left">
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-4">
+              <span className="text-hotpink font-bold text-xs uppercase block">01. Architecture</span>
+              <p className="text-sm font-bold text-white font-display mt-0.5">In-House Architects</p>
+              <p className="text-[11px] text-white/50 mt-1">Distinctive architectural expressions & Vastu principles.</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-4">
+              <span className="text-hotpink font-bold text-xs uppercase block">02. Interiors</span>
+              <p className="text-sm font-bold text-white font-display mt-0.5">In-House Interior Designers</p>
+              <p className="text-[11px] text-white/50 mt-1">Curating bespoke and sophisticated luxury spaces.</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-4">
+              <span className="text-hotpink font-bold text-xs uppercase block">03. Technology</span>
+              <p className="text-sm font-bold text-white font-display mt-0.5">In-House Tech Team</p>
+              <p className="text-[11px] text-white/50 mt-1">Intelligent automation & futuristic home technology.</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-4">
+              <span className="text-hotpink font-bold text-xs uppercase block">04. Engineering</span>
+              <p className="text-sm font-bold text-white font-display mt-0.5">In-House Engineers</p>
+              <p className="text-[11px] text-white/50 mt-1">Structural excellence & precision execution.</p>
+            </div>
+          </div>
         </div>
       </section>
 

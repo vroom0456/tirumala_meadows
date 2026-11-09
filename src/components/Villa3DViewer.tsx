@@ -395,7 +395,7 @@ export default function Villa3DViewer() {
                 <span>SCALE: 1:100 (NTS)</span>
               </div>
               <div className="text-slate-400">
-                <span>APPROVED BY: <strong>MANSANI CONSTRUCTIONS ARCHITECTURAL CELL</strong></span>
+                <span>APPROVED BY: <strong>TIRUMALA MEADOWS IN-HOUSE ARCHITECTURAL CELL</strong></span>
               </div>
             </div>
           </div>
@@ -495,3 +495,4 @@ export default function Villa3DViewer() {
     </div>
   )
 }
+

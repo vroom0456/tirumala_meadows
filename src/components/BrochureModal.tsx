@@ -28,37 +28,67 @@ export default function BrochureModal({ isOpen, onClose }: BrochureModalProps) {
 
         {/* Factsheet Header */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border pb-6">
-          <TirumalaLogo className="h-10" />
+          <div>
+            <TirumalaLogo className="h-10" showCorporate={true} />
+            <p className="text-xs font-serif italic text-navy/80 mt-1">
+              "Quality For The Best Living" — 28 Years of Excellence
+            </p>
+          </div>
           <div className="text-left sm:text-right">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-200 px-3 py-0.5 text-[11px] font-bold text-emerald-800">
               <CheckCircle2 className="h-3 w-3 text-emerald-600" />
-              100% Completed Township
+              Corporate Portfolio Factsheet
             </span>
-            <p className="text-xs text-slate-grey mt-1">Official Project Factsheet & Investor Brief</p>
+            <p className="text-xs text-slate-grey mt-1">Registered Address: Jubilee Hills, Hyderabad (500 034)</p>
           </div>
         </div>
 
         {/* Executive Summary Grid */}
         <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
           <div className="rounded-2xl bg-soft border border-border p-3.5 text-center">
-            <span className="text-[10px] uppercase font-bold text-slate-grey">Site Extent</span>
-            <p className="text-base font-extrabold text-navy font-display mt-0.5">14.0 Acres</p>
-            <span className="text-[10px] text-slate-grey">Gated Villa Layout</span>
+            <span className="text-[10px] uppercase font-bold text-slate-grey">Experience</span>
+            <p className="text-base font-extrabold text-navy font-display mt-0.5">28+ Years</p>
+            <span className="text-[10px] text-slate-grey">Real Estate & Construction</span>
           </div>
           <div className="rounded-2xl bg-soft border border-border p-3.5 text-center">
-            <span className="text-[10px] uppercase font-bold text-slate-grey">Typology</span>
-            <p className="text-base font-extrabold text-navy font-display mt-0.5">Ground + 1</p>
-            <span className="text-[10px] text-slate-grey">Independent Duplex</span>
+            <span className="text-[10px] uppercase font-bold text-slate-grey">Completed Villas</span>
+            <p className="text-base font-extrabold text-navy font-display mt-0.5">30+ Villas</p>
+            <span className="text-[10px] text-slate-grey">Particularly Jubilee Hills</span>
           </div>
           <div className="rounded-2xl bg-soft border border-border p-3.5 text-center">
-            <span className="text-[10px] uppercase font-bold text-slate-grey">Configurations</span>
-            <p className="text-base font-extrabold text-navy font-display mt-0.5">2, 3 & 4 BHK</p>
-            <span className="text-[10px] text-slate-grey">850 – 2,200 sq.ft</span>
+            <span className="text-[10px] uppercase font-bold text-slate-grey">Land Facilitated</span>
+            <p className="text-base font-extrabold text-navy font-display mt-0.5">3,000+ Acres</p>
+            <span className="text-[10px] text-slate-grey">Layout Development</span>
           </div>
           <div className="rounded-2xl bg-soft border border-border p-3.5 text-center">
-            <span className="text-[10px] uppercase font-bold text-slate-grey">Status</span>
-            <p className="text-base font-extrabold text-emerald-700 font-display mt-0.5">Ready to Move</p>
-            <span className="text-[10px] text-slate-grey">Occupied Community</span>
+            <span className="text-[10px] uppercase font-bold text-slate-grey">Workforce</span>
+            <p className="text-base font-extrabold text-emerald-700 font-display mt-0.5">250+ Pros</p>
+            <span className="text-[10px] text-slate-grey">Dedicated In-House Team</span>
+          </div>
+        </div>
+
+        {/* In-House Integrated Ecosystem */}
+        <div className="mt-6 p-4 rounded-2xl bg-soft/70 border border-border">
+          <p className="text-xs font-bold uppercase tracking-wider text-navy font-display mb-2">
+            The Art of Integrated Luxury — Dedicated In-House Ecosystem
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px] text-slate-grey">
+            <div className="bg-white p-2.5 rounded-xl border border-border/80">
+              <strong className="text-navy block">In-House Architects</strong>
+              Distinctive architectural expressions
+            </div>
+            <div className="bg-white p-2.5 rounded-xl border border-border/80">
+              <strong className="text-navy block">In-House Designers</strong>
+              Bespoke sophisticated spaces
+            </div>
+            <div className="bg-white p-2.5 rounded-xl border border-border/80">
+              <strong className="text-navy block">In-House Tech Team</strong>
+              Intelligent home automation
+            </div>
+            <div className="bg-white p-2.5 rounded-xl border border-border/80">
+              <strong className="text-navy block">In-House Engineers</strong>
+              Structural execution excellence
+            </div>
           </div>
         </div>
 
@@ -115,9 +145,9 @@ export default function BrochureModal({ isOpen, onClose }: BrochureModalProps) {
         </div>
 
         {/* Footer Note */}
-        <div className="mt-6 pt-4 border-t border-border flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-grey">
-          <span>Developed by <strong>Mansani Constructions Pvt Ltd</strong></span>
-          <span>Thirumala Meadows Colony, Chilakanagar, Uppal / Boduppal, Hyderabad</span>
+        <div className="mt-6 pt-4 border-t border-border flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-grey gap-2">
+          <span><strong>Tirumala Meadows Private Limited</strong> · Contact: +91 95508 28688</span>
+          <span>Registered Address: Jubilee Hills - Hyderabad (500 034)</span>
         </div>
       </div>
     </div>

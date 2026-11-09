@@ -42,7 +42,7 @@ const villasData: Villa[] = [
     priceEst: '₹75 – 95 Lakhs (Resale Est.)',
     tag: 'Compact & Functional',
     desc: 'Thoughtfully designed for young couples or nuclear families, balancing independent privacy with low-maintenance duplex living.',
-    image: '/residential.jpg',
+    image: '/portfolio/contemporary-villa-daylight.jpg',
     highlights: [
       'Double-height feeling living room',
       'East-facing dedicated Puja niche',
@@ -76,7 +76,7 @@ const villasData: Villa[] = [
     priceEst: '₹1.15 – 1.45 Cr (Resale Est.)',
     tag: 'Most Popular Family Villa',
     desc: 'The signature family layout at Tirumala Meadows. Large living-dining hall, 3 airy bedrooms, multiple balconies, and an independent rooftop.',
-    image: '/luxury-villas.jpg',
+    image: '/portfolio/jubilee-hills-facade-dusk.jpg',
     highlights: [
       'Expansive living and formal dining zone',
       '3 large bedrooms with en-suite bathrooms',
@@ -112,7 +112,7 @@ const villasData: Villa[] = [
     priceEst: '₹1.65 – 1.95 Cr (Resale Est.)',
     tag: 'Grand Estate Lifestyle',
     desc: 'The pinnacle of private gated estate living. Features 4 oversized bedroom suites, multipurpose home theatre room, and sprawling terraces.',
-    image: '/commercial.jpg',
+    image: '/portfolio/jubilee-hills-regal-estate.jpg',
     highlights: [
       'Palatial living room designed for executive hosting',
       'Dedicated multipurpose room / home theatre suite',

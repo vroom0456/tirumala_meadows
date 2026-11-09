@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom'
-import { MapPin, Phone, Mail, ArrowUpRight } from 'lucide-react'
+import { MapPin, Phone, Mail, ArrowUpRight, Award, ShieldCheck, Sparkles } from 'lucide-react'
 import TirumalaLogo from './TirumalaLogo'
 
 const footLinks = [
-  { to: '/', label: 'Overview' },
-  { to: '/villas', label: 'Villas & Floorplans' },
-  { to: '/amenities', label: 'Clubhouse & Lifestyle' },
-  { to: '/location', label: 'Location & Transit' },
-  { to: '/contact', label: 'Resale & Inquiries' },
+  { to: '/', label: 'Overview & Legacy' },
+  { to: '/villas', label: 'Villas & 3D Studio' },
+  { to: '/amenities', label: 'Integrated Luxury & Verticals' },
+  { to: '/location', label: 'Strategic Land Parcels' },
+  { to: '/contact', label: 'Corporate Office & Desk' },
 ]
 
 export default function Footer() {
@@ -17,14 +17,21 @@ export default function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 pb-12 border-b border-white/10">
           {/* Brand */}
           <div className="space-y-4 lg:col-span-2">
-            <TirumalaLogo textColor="text-white" />
-            <p className="text-xs sm:text-sm leading-relaxed max-w-md text-white/70">
-              A thoughtfully planned 14-acre gated villa community in East Hyderabad. 100% completed independent duplex living blending urban connectivity with green family serenity.
+            <TirumalaLogo textColor="text-white" showCorporate={true} />
+            <p className="text-xs sm:text-sm font-serif italic text-white/90">
+              "Quality For The Best Living"
             </p>
-            <div className="pt-1">
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs text-white/80">
+            <p className="text-xs sm:text-sm leading-relaxed max-w-md text-white/70">
+              For over 28 years, Tirumala Meadows Private Limited has delivered architectural distinction and refined living across 30+ exclusive luxury villas, particularly in Jubilee Hills, Hyderabad.
+            </p>
+            <div className="pt-1 flex flex-wrap gap-2">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs text-white/90">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                Developed by Mansani Constructions Pvt Ltd
+                28 Years of Excellence
+              </span>
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs text-white/90">
+                <Award className="h-3 w-3 text-hotpink" />
+                3,000+ Acres Facilitated
               </span>
             </div>
           </div>
@@ -46,16 +53,19 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <p className="text-xs font-bold text-white uppercase tracking-wider mb-4 font-display">Community Desk</p>
+            <p className="text-xs font-bold text-white uppercase tracking-wider mb-4 font-display">Corporate Office</p>
             <div className="space-y-3 text-xs sm:text-sm">
               <div className="flex items-start gap-2.5">
                 <MapPin className="h-4 w-4 text-hotpink shrink-0 mt-0.5" />
-                <span>Thirumala Meadows Colony, Chilakanagar, Uppal / Boduppal, Hyderabad</span>
+                <div>
+                  <p className="font-semibold text-white">Registered Address:</p>
+                  <span>Jubilee Hills - Hyderabad (500 034), Telangana, India</span>
+                </div>
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="h-4 w-4 text-hotpink shrink-0" />
-                <a href="tel:+919700760120" className="hover:text-white transition font-semibold text-white">
-                  +91 97007 60120
+                <a href="tel:+919550828688" className="hover:text-white transition font-semibold text-white">
+                  +91 95508 28688
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
@@ -66,9 +76,16 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50">
-          <p>© {new Date().getFullYear()} Tirumala Meadows. All rights reserved.</p>
-          <p>Independent Gated Living · Hyderabad, Telangana</p>
+        {/* Corporate Motto Bar */}
+        <div className="pt-8 pb-6 border-b border-white/10 text-center">
+          <p className="text-xs sm:text-sm font-semibold tracking-wider text-white/80 font-display uppercase">
+            We’re Busy Round the Clock CREATING LANDMARKS. BUILDING VALUE & WEALTH.
+          </p>
+        </div>
+
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50">
+          <p>© {new Date().getFullYear()} Tirumala Meadows Private Limited. All rights reserved.</p>
+          <p>Jubilee Hills · Hyderabad, Telangana (500 034)</p>
         </div>
       </div>
     </footer>

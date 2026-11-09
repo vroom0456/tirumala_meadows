@@ -47,12 +47,12 @@ export default function ContactPage() {
             {/* Left Column: Direct Info */}
             <div className="lg:col-span-5 space-y-6">
               <div>
-                <h2 className="text-2xl font-bold text-navy font-display">Tirumala Meadows</h2>
+                <h2 className="text-2xl font-bold text-navy font-display">Tirumala Meadows Private Limited</h2>
                 <p className="text-xs text-hotpink font-semibold uppercase tracking-wider mt-0.5">
-                  Gated Villa Township · Uppal / Boduppal
+                  Corporate Office & Project Inquiries · Jubilee Hills, Hyderabad
                 </p>
                 <p className="text-sm text-slate-grey mt-3 leading-relaxed">
-                  Our resident association and verified representative desk helps prospective homeowners schedule guided township walkthroughs and explore verified resale units.
+                  For over 28 years, Tirumala Meadows Private Limited has delivered architectural distinction across 30+ exclusive villas. Our corporate desk assists prospective homeowners, institutional partners, and investors.
                 </p>
               </div>
 
@@ -62,9 +62,9 @@ export default function ContactPage() {
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-navy uppercase tracking-wider">Site Location</p>
+                    <p className="text-xs font-bold text-navy uppercase tracking-wider">Registered Corporate Address</p>
                     <p className="text-xs sm:text-sm text-slate-grey mt-0.5 leading-relaxed">
-                      Thirumala Meadows Colony, Hema Nagar, Chilakanagar, Uppal / Boduppal, Hyderabad 500039
+                      Jubilee Hills - Hyderabad (500 034), Telangana, India
                     </p>
                   </div>
                 </div>
@@ -74,9 +74,21 @@ export default function ContactPage() {
                     <Phone className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-navy uppercase tracking-wider">Direct Call</p>
-                    <a href="tel:+919700760120" className="text-xs sm:text-sm font-semibold text-navy hover:text-hotpink transition mt-0.5 block">
-                      +91 97007 60120
+                    <p className="text-xs font-bold text-navy uppercase tracking-wider">Direct Corporate Desk</p>
+                    <a href="tel:+919550828688" className="text-xs sm:text-sm font-semibold text-navy hover:text-hotpink transition mt-0.5 block">
+                      +91 95508 28688
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="h-10 w-10 rounded-xl bg-white border border-border flex items-center justify-center text-emerald-600 shrink-0">
+                    <Mail className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-navy uppercase tracking-wider">Official Email</p>
+                    <a href="mailto:info@tirumalameadows.com" className="text-xs sm:text-sm font-semibold text-navy hover:text-hotpink transition mt-0.5 block">
+                      info@tirumalameadows.com
                     </a>
                   </div>
                 </div>
@@ -86,9 +98,9 @@ export default function ContactPage() {
                     <Clock className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-navy uppercase tracking-wider">Visiting Hours</p>
+                    <p className="text-xs font-bold text-navy uppercase tracking-wider">Office Hours</p>
                     <p className="text-xs sm:text-sm text-slate-grey mt-0.5">
-                      Daily: 9:00 AM – 6:30 PM (Prior appointment recommended)
+                      Monday – Saturday: 9:30 AM – 6:30 PM (Prior appointment recommended)
                     </p>
                   </div>
                 </div>
@@ -97,10 +109,10 @@ export default function ContactPage() {
               <div className="rounded-2xl border border-border p-5 text-xs text-slate-grey space-y-2">
                 <div className="flex items-center gap-2 font-bold text-navy">
                   <ShieldCheck className="h-4 w-4 text-emerald-600" />
-                  <span>100% Completed Gated Community</span>
+                  <span>28 Years of Real Estate Excellence</span>
                 </div>
                 <p className="leading-relaxed">
-                  Developed by Mansani Constructions Pvt Ltd. All infrastructure, internal roads, clubhouse, and electricity lines are fully operational.
+                  Tirumala Meadows Private Limited. In-House Architects, In-House Interior Designers, In-House Technology Team & In-House Engineers.
                 </p>
               </div>
             </div>

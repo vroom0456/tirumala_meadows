@@ -254,6 +254,41 @@ export default function LocationPage() {
         </div>
       </section>
 
+      {/* Strategic Land Parcels & Western Telangana Corridors */}
+      <section className="py-16 bg-white border-t border-border">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="text-xs font-bold text-hotpink uppercase tracking-wider">
+              Strategic Land Bank & Future Growth
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-bold text-navy font-display mt-1">
+              Active Acquisitions Across Western Telangana
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-grey mt-2">
+              Our focus is on strategically positioned land parcels with strong long-term development potential.
+            </p>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5 text-center">
+            {[
+              { hub: 'Jubilee Hills', desc: 'Registered Headquarters & 30+ Luxury Completed Villas', tag: 'Legacy Epicentre' },
+              { hub: 'Kollur', desc: 'Rapidly expanding IT growth corridor near ORR', tag: 'High Growth Node' },
+              { hub: 'Velimala', desc: 'Exclusive plotted & villa acreage developments', tag: 'Luxury Zone' },
+              { hub: 'Shankarpally', desc: 'Picturesque green belt layout facilitation', tag: 'Scenic Acreage' },
+              { hub: 'Vikarabad', desc: 'Emerging wellness, eco-resort & land investment hub', tag: 'Eco Corridor' },
+            ].map((node, i) => (
+              <div key={i} className="rounded-2xl border border-border bg-soft p-5 hover:bg-white hover:shadow-corporate transition">
+                <span className="text-[10px] font-bold text-hotpink uppercase tracking-wider block mb-1">
+                  {node.tag}
+                </span>
+                <p className="text-base font-bold text-navy font-display">{node.hub}</p>
+                <p className="text-xs text-slate-grey mt-1 leading-relaxed">{node.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   )

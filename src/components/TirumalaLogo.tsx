@@ -2,6 +2,7 @@ interface TirumalaLogoProps {
   className?: string
   showText?: boolean
   textColor?: string
+  showCorporate?: boolean
   variant?: 'vector' | 'image'
 }
 
@@ -9,6 +10,7 @@ export default function TirumalaLogo({
   className = 'h-8',
   showText = true,
   textColor = 'text-navy',
+  showCorporate = true,
   variant = 'vector',
 }: TirumalaLogoProps) {
   if (variant === 'image') {
@@ -16,7 +18,7 @@ export default function TirumalaLogo({
       <div className={`flex items-center gap-2.5 ${className}`}>
         <img
           src="/logo.jpg"
-          alt="Tirumala Meadows"
+          alt="Tirumala Meadows Private Limited"
           className="h-8 w-auto object-contain rounded-sm"
         />
       </div>
@@ -46,12 +48,19 @@ export default function TirumalaLogo({
 
       {showText && (
         <div className="flex flex-col leading-none">
-          <span className={`text-[13px] font-extrabold tracking-[0.22em] uppercase ${textColor} font-serif font-display`}>
+          <span className={`text-[13px] font-extrabold tracking-[0.20em] uppercase ${textColor} font-serif font-display`}>
             TIRUMALA
           </span>
-          <span className={`text-[10px] font-semibold tracking-[0.28em] uppercase ${textColor} opacity-85 font-serif font-display mt-0.5`}>
-            MEADOWS
-          </span>
+          <div className="flex items-center gap-1 mt-0.5">
+            <span className={`text-[10px] font-semibold tracking-[0.26em] uppercase ${textColor} opacity-85 font-serif font-display`}>
+              MEADOWS
+            </span>
+            {showCorporate && (
+              <span className={`text-[7px] font-bold tracking-[0.14em] uppercase ${textColor} opacity-60 font-sans border-l border-current/30 pl-1`}>
+                PVT LTD
+              </span>
+            )}
+          </div>
         </div>
       )}
     </div>

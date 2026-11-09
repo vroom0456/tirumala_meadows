@@ -6,10 +6,10 @@ import BrochureModal from './BrochureModal'
 
 const navLinks = [
   { to: '/', label: 'Overview' },
-  { to: '/villas', label: 'Villas & Floorplans' },
-  { to: '/amenities', label: 'Amenities & Club' },
-  { to: '/location', label: 'Location & Metro' },
-  { to: '/contact', label: 'Inquire & Visit' },
+  { to: '/villas', label: 'Villas & 3D Studio' },
+  { to: '/amenities', label: 'In-House Luxury & Verticals' },
+  { to: '/location', label: 'Locations & Land' },
+  { to: '/contact', label: 'Contact & Inquiry' },
 ]
 
 export default function Navbar() {
@@ -32,18 +32,18 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1.5 font-semibold text-white">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-              14-Acre Gated Villa Township · 100% Completed
+              28 Years of Excellence · A Legacy of Distinction
             </span>
             <span className="text-white/20">|</span>
-            <span className="text-white/70">Uppal / Boduppal, East Hyderabad</span>
+            <span className="text-white/70">Jubilee Hills · Hyderabad (500 034)</span>
           </div>
 
           <div className="flex items-center gap-4">
-            <span className="text-white/60">Bank Approvals: SBI · HDFC · ICICI</span>
+            <span className="text-white/60">30+ Luxury Villas · 3,000+ Acres Facilitated</span>
             <span className="text-white/20">|</span>
-            <a href="tel:+919700760120" className="flex items-center gap-1 font-bold text-white hover:text-hotpink transition">
+            <a href="tel:+919550828688" className="flex items-center gap-1 font-bold text-white hover:text-hotpink transition">
               <Phone className="h-3 w-3 text-hotpink" />
-              <span>+91 97007 60120</span>
+              <span>+91 95508 28688</span>
             </a>
           </div>
         </div>
