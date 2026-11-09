@@ -16,7 +16,8 @@ import {
   ShieldCheck,
   Eye,
   Maximize2,
-  CheckCircle2
+  CheckCircle2,
+  Calculator
 } from 'lucide-react'
 
 interface Villa {
@@ -391,19 +392,26 @@ export default function VillasPage() {
                 </div>
 
                 {/* CTA */}
-                <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
+                <div className="pt-2 flex flex-col sm:flex-row items-center gap-2.5">
                   <Link
                     to="/contact"
-                    className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-navy py-3 text-xs font-bold text-white hover:bg-navy-light transition shadow-xs uppercase tracking-wider"
+                    className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-navy py-3 px-5 text-xs font-bold text-white hover:bg-navy-light transition shadow-xs uppercase tracking-wider"
                   >
                     <Calendar className="h-4 w-4" />
                     <span>Enquire for {villa.name}</span>
                   </Link>
+                  <Link
+                    to="/emi-calculator"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 rounded-full border border-slate-300 bg-white px-4 py-3 text-xs font-bold text-navy hover:bg-slate-50 transition uppercase tracking-wider"
+                  >
+                    <Calculator className="h-3.5 w-3.5 text-brandLogo-blue" />
+                    <span>EMI Simulator</span>
+                  </Link>
                   <a
                     href="tel:+919550828688"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-xs font-bold text-navy hover:bg-slate-50 transition uppercase tracking-wider"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 rounded-full border border-slate-300 bg-white px-4 py-3 text-xs font-bold text-navy hover:bg-slate-50 transition uppercase tracking-wider"
                   >
-                    <span>Direct Concierge</span>
+                    <span>Direct Call</span>
                     <ArrowRight className="h-3.5 w-3.5" />
                   </a>
                 </div>

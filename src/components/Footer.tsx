@@ -1,13 +1,20 @@
 import { Link } from 'react-router-dom'
-import { MapPin, Phone, Mail, ArrowUpRight, Award, ShieldCheck, MessageSquare, Clock } from 'lucide-react'
+import { MapPin, Phone, Mail, ArrowUpRight, Award, ShieldCheck, MessageSquare, Clock, Calculator, TrendingUp } from 'lucide-react'
 import TirumalaLogo from './TirumalaLogo'
 
 const footLinks = [
   { to: '/', label: 'Overview & Legacy' },
-  { to: '/villas', label: 'Villas & 3D Architectural Studio' },
-  { to: '/amenities', label: 'Integrated Luxury & Verticals' },
-  { to: '/location', label: 'Strategic Land Parcels & Map' },
-  { to: '/contact', label: 'Corporate Office & Concierge Desk' },
+  { to: '/villas', label: 'Villas & 3D Studio' },
+  { to: '/amenities', label: 'In-House Luxury' },
+  { to: '/location', label: 'Location & Map' },
+  { to: '/contact', label: 'Corporate Office' },
+]
+
+const financialLinks = [
+  { to: '/emi-calculator', label: 'Home Loan EMI Calculator' },
+  { to: '/roi-calculator', label: 'ROI & Wealth Engine' },
+  { to: '/resident', label: 'Resident Private Hub' },
+  { to: '/contact', label: 'Banking Desk Consultation' },
 ]
 
 export default function Footer() {
@@ -18,9 +25,9 @@ export default function Footer() {
   return (
     <footer className="bg-navy text-white relative border-t border-white/10 pt-16 pb-12 selection:bg-brandLogo-blue selection:text-white">
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-12 pb-12 border-b border-white/10">
-          {/* Brand Column */}
-          <div className="space-y-4 lg:col-span-5">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-12 pb-12 border-b border-white/10">
+          {/* Brand Column (4 cols) */}
+          <div className="space-y-4 lg:col-span-4">
             <TirumalaLogo textColor="text-white" showCorporate={true} />
             <p className="text-xs sm:text-sm font-semibold tracking-wide text-white/90 font-display">
               Quality For The Best Living
@@ -29,24 +36,24 @@ export default function Footer() {
               For over 28 years, Tirumala Meadows Private Limited has delivered architectural distinction and refined living across 30+ exclusive luxury residential villas, particularly in Jubilee Hills, Hyderabad.
             </p>
 
-            <div className="pt-2 flex flex-wrap gap-2.5">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-navy-surface border border-white/15 px-3.5 py-1.5 text-xs font-semibold text-white/90">
+            <div className="pt-2 flex flex-wrap gap-2">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-navy-surface border border-white/15 px-3 py-1 text-xs font-semibold text-white/90">
                 <span className="h-2 w-2 rounded-full bg-brandLogo-green" />
                 28+ Years of Excellence
               </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-navy-surface border border-white/15 px-3.5 py-1.5 text-xs font-semibold text-white/90">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-navy-surface border border-white/15 px-3 py-1 text-xs font-semibold text-white/90">
                 <Award className="h-3.5 w-3.5 text-brandLogo-red" />
                 3,000+ Acres Facilitated
               </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-navy-surface border border-white/15 px-3.5 py-1.5 text-xs font-semibold text-white/90">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-navy-surface border border-white/15 px-3 py-1 text-xs font-semibold text-white/90">
                 <ShieldCheck className="h-3.5 w-3.5 text-blue-400" />
                 Clear Title Documentation
               </span>
             </div>
           </div>
 
-          {/* Quick Links Column */}
-          <div className="lg:col-span-3">
+          {/* Quick Links Column (2 cols) */}
+          <div className="lg:col-span-2">
             <p className="text-xs font-bold text-white uppercase tracking-[0.16em] mb-4 font-display flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-brandLogo-red" />
               Navigation
@@ -56,7 +63,7 @@ export default function Footer() {
                 <li key={l.to}>
                   <Link
                     to={l.to}
-                    className="text-xs sm:text-sm text-white/70 hover:text-white transition-colors flex items-center justify-between group py-1.5 border-b border-white/5"
+                    className="text-xs sm:text-sm text-white/70 hover:text-white transition-colors flex items-center justify-between group py-1 border-b border-white/5"
                   >
                     <span className="group-hover:translate-x-1 transition-transform">{l.label}</span>
                     <ArrowUpRight className="h-3.5 w-3.5 text-white/40 group-hover:text-white transition" />
@@ -66,14 +73,35 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact & Desk Column */}
+          {/* Financial & Tools Column (2 cols) */}
+          <div className="lg:col-span-2">
+            <p className="text-xs font-bold text-white uppercase tracking-[0.16em] mb-4 font-display flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-brandLogo-green" />
+              Financial Tools
+            </p>
+            <ul className="space-y-2">
+              {financialLinks.map((l) => (
+                <li key={l.to + l.label}>
+                  <Link
+                    to={l.to}
+                    className="text-xs sm:text-sm text-white/70 hover:text-white transition-colors flex items-center justify-between group py-1 border-b border-white/5"
+                  >
+                    <span className="group-hover:translate-x-1 transition-transform">{l.label}</span>
+                    <ArrowUpRight className="h-3.5 w-3.5 text-white/40 group-hover:text-white transition" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact & Desk Column (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
             <p className="text-xs font-bold text-white uppercase tracking-[0.16em] mb-4 font-display flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-brandLogo-blue" />
               Corporate Office & Concierge
             </p>
 
-            <div className="space-y-3.5 text-xs sm:text-sm">
+            <div className="space-y-3 text-xs sm:text-sm">
               <div className="flex items-start gap-3 p-3 rounded-xl bg-navy-surface border border-white/10">
                 <MapPin className="h-4 w-4 text-brandLogo-red shrink-0 mt-0.5" />
                 <div>
@@ -87,7 +115,7 @@ export default function Footer() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 <a
                   href="tel:+919550828688"
-                  className="flex items-center gap-2.5 p-3 rounded-xl bg-navy-surface border border-white/10 hover:border-white/30 transition group"
+                  className="flex items-center gap-2.5 p-2.5 rounded-xl bg-navy-surface border border-white/10 hover:border-white/30 transition group"
                 >
                   <Phone className="h-4 w-4 text-blue-400 shrink-0 group-hover:scale-110 transition-transform" />
                   <div>
@@ -100,7 +128,7 @@ export default function Footer() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2.5 p-3 rounded-xl bg-navy-surface border border-white/10 hover:border-emerald-500/50 transition group"
+                  className="flex items-center gap-2.5 p-2.5 rounded-xl bg-navy-surface border border-white/10 hover:border-emerald-500/50 transition group"
                 >
                   <MessageSquare className="h-4 w-4 text-brandLogo-green shrink-0 group-hover:scale-110 transition-transform" />
                   <div>
@@ -110,7 +138,7 @@ export default function Footer() {
                 </a>
               </div>
 
-              <div className="flex items-center gap-2.5 px-3 py-2 text-white/70 text-xs">
+              <div className="flex items-center gap-2 px-3 py-1.5 text-white/70 text-xs">
                 <Clock className="h-3.5 w-3.5 text-white/60 shrink-0" />
                 <span>Executive Concierge: Mon – Sat, 9:30 AM – 7:30 PM IST</span>
               </div>

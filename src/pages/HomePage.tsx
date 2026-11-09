@@ -8,7 +8,7 @@ import {
   ArrowRight, Check, MapPin, Calendar, ChevronDown,
   Dumbbell, Film, Trees, ShieldCheck, Users, Droplets,
   Building2, Home, Layers, Zap, Compass, TrendingUp,
-  Percent, FileText, CheckCircle2, Award, Landmark,
+  Percent, FileText, CheckCircle2, Award, Landmark, Calculator,
   Car, Eye, Sparkles, Phone, HelpCircle, MessageSquare, Heart,
   Briefcase, Factory, Anchor, Globe, Trophy, Leaf, Palette, Cpu,
   Maximize2, X, Navigation, Clock, Send
@@ -681,6 +681,117 @@ export default function HomePage() {
                   <Phone className="h-3.5 w-3.5" />
                   <span>Call Us</span>
                 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═════════════════════════════════════════════════════════════════ */}
+      {/* 5B. FINANCIAL & INVESTOR SIMULATORS TEASER                        */}
+      {/* ═════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 sm:py-24 bg-white border-t border-slate-200">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <div className="inline-flex items-center gap-2 rounded-full bg-slate-100 border border-slate-200 px-3.5 py-1 text-xs font-semibold text-slate-700 mb-3">
+              <span className="h-1.5 w-1.5 rounded-full bg-brandLogo-blue" />
+              <span className="h-1.5 w-1.5 rounded-full bg-brandLogo-green" />
+              <span className="uppercase tracking-[0.16em] text-[10px] font-bold">Institutional Financial Tools</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-navy tracking-tight">
+              Financial Engineering & Wealth Engines
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-600 mt-2 max-w-2xl mx-auto">
+              Model precise loan installments with pre-approved banking partner rates or simulate multi-year capital appreciation and compounding rental cashflows.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Card 1: EMI Calculator */}
+            <div className="rounded-3xl border border-slate-200 bg-soft p-7 sm:p-9 flex flex-col justify-between hover:shadow-lg transition-all group">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="h-12 w-12 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center text-brandLogo-blue">
+                    <Calculator className="h-6 w-6" />
+                  </div>
+                  <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-white border border-slate-200 text-slate-600">
+                    SBI · HDFC · ICICI · Axis
+                  </span>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-bold font-display text-navy group-hover:text-brandLogo-blue transition">
+                    Home Loan EMI & Amortization Simulator
+                  </h3>
+                  <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+                    Calculate monthly installments, principal vs interest splits, and review pre-approved mortgage rates starting at 8.40% across 5 to 30 year repayment horizons.
+                  </p>
+                </div>
+
+                <div className="pt-2 grid grid-cols-2 gap-3 text-xs">
+                  <div className="bg-white rounded-xl p-3 border border-slate-200">
+                    <span className="text-[10px] uppercase font-bold text-slate-400 block">Benchmark Rate</span>
+                    <strong className="text-navy font-display text-sm">8.40% – 8.75%</strong>
+                  </div>
+                  <div className="bg-white rounded-xl p-3 border border-slate-200">
+                    <span className="text-[10px] uppercase font-bold text-slate-400 block">Pre-Approval</span>
+                    <strong className="text-brandLogo-green font-display text-sm">100% Clear Title</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-6 mt-6 border-t border-slate-200">
+                <Link
+                  to="/emi-calculator"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-brandLogo-blue hover:bg-blue-700 text-white py-3 text-xs font-bold uppercase tracking-wider transition shadow-sm"
+                >
+                  <span>Launch EMI Calculator</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Card 2: ROI Calculator */}
+            <div className="rounded-3xl border border-slate-200 bg-soft p-7 sm:p-9 flex flex-col justify-between hover:shadow-lg transition-all group">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="h-12 w-12 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-brandLogo-green">
+                    <TrendingUp className="h-6 w-6" />
+                  </div>
+                  <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-white border border-slate-200 text-emerald-800">
+                    +12.5% Historical CAGR
+                  </span>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-bold font-display text-navy group-hover:text-brandLogo-green transition">
+                    Real Estate ROI & Wealth Engine
+                  </h3>
+                  <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+                    Simulate capital gains, annual rental yield cashflows, and long-term freehold land-share equity in Jubilee Hills and Hyderabad's fastest-appreciating zones.
+                  </p>
+                </div>
+
+                <div className="pt-2 grid grid-cols-2 gap-3 text-xs">
+                  <div className="bg-white rounded-xl p-3 border border-slate-200">
+                    <span className="text-[10px] uppercase font-bold text-slate-400 block">Corridor CAGR</span>
+                    <strong className="text-navy font-display text-sm">+12.5% Annual</strong>
+                  </div>
+                  <div className="bg-white rounded-xl p-3 border border-slate-200">
+                    <span className="text-[10px] uppercase font-bold text-slate-400 block">Rental Yield</span>
+                    <strong className="text-brandLogo-green font-display text-sm">~4.0% p.a. + Escalation</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-6 mt-6 border-t border-slate-200">
+                <Link
+                  to="/roi-calculator"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-brandLogo-green hover:bg-emerald-800 text-white py-3 text-xs font-bold uppercase tracking-wider transition shadow-sm"
+                >
+                  <span>Launch ROI Calculator</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
               </div>
             </div>
           </div>

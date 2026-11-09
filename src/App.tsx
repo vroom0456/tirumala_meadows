@@ -5,6 +5,8 @@ import AmenitiesPage from './pages/AmenitiesPage'
 import LocationPage from './pages/LocationPage'
 import ContactPage from './pages/ContactPage'
 import ResidentHubPage from './pages/ResidentHubPage'
+import EMICalculatorPage from './pages/EMICalculatorPage'
+import ROICalculatorPage from './pages/ROICalculatorPage'
 
 export default function App() {
   return (
@@ -17,6 +19,10 @@ export default function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/inquire" element={<Navigate to="/contact" replace />} />
         <Route path="/resident" element={<ResidentHubPage />} />
+        <Route path="/emi" element={<EMICalculatorPage />} />
+        <Route path="/emi-calculator" element={<EMICalculatorPage />} />
+        <Route path="/roi" element={<ROICalculatorPage />} />
+        <Route path="/roi-calculator" element={<ROICalculatorPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
